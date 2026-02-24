@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Launch Edge",
+            "file": "${workspaceFolder}/index.html"
+        }
+    ]
+}
