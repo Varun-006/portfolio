@@ -1,95 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Database, Wrench, ShieldCheck, Cpu, Sparkles } from "lucide-react";
-
-interface Skill {
-  name: string;
-  level: number; // 0-100
-}
+import { Terminal, Database, Wrench, Cpu, Globe, Sparkles } from "lucide-react";
 
 interface SkillCategory {
   title: string;
   icon: React.ReactNode;
   accent: string;
-  skills: Skill[];
+  skills: string[];
 }
 
 export default function Skills() {
   const categories: SkillCategory[] = [
     {
-      title: "Frontend Core",
+      title: "Programming",
       icon: <Terminal className="w-5 h-5" />,
       accent: "indigo",
-      skills: [
-        { name: "React 19", level: 90 },
-        { name: "Next.js 15", level: 88 },
-        { name: "TypeScript", level: 82 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "HTML5 / CSS3", level: 95 },
-        { name: "JavaScript ES6+", level: 90 },
-      ],
+      skills: ["Python", "Java", "JavaScript", "TypeScript"],
     },
     {
-      title: "Backend Services",
-      icon: <Database className="w-5 h-5" />,
-      accent: "violet",
-      skills: [
-        { name: "Node.js", level: 80 },
-        { name: "Express.js", level: 78 },
-        { name: "Python", level: 85 },
-        { name: "RESTful APIs", level: 88 },
-        { name: "SQL / SQLite", level: 74 },
-        { name: "MongoDB", level: 70 },
-      ],
-    },
-    {
-      title: "Tools & DevOps",
-      icon: <Wrench className="w-5 h-5" />,
-      accent: "sky",
-      skills: [
-        { name: "Git & GitHub", level: 92 },
-        { name: "Docker", level: 68 },
-        { name: "VS Code", level: 95 },
-        { name: "Figma Design", level: 72 },
-        { name: "NPM / Yarn / Bun", level: 88 },
-        { name: "Webpack / Vite", level: 75 },
-      ],
-    },
-    {
-      title: "AI & Intelligence",
+      title: "AI & Machine Learning",
       icon: <Cpu className="w-5 h-5" />,
       accent: "purple",
-      skills: [
-        { name: "Machine Learning", level: 78 },
-        { name: "Scikit-Learn", level: 75 },
-        { name: "FastAPI Pipelines", level: 72 },
-        { name: "Data Pipelines", level: 74 },
-        { name: "Predictive Analytics", level: 70 },
-        { name: "Telemetry Monitoring", level: 68 },
-      ],
+      skills: ["Machine Learning", "Generative AI", "NLP", "FAISS", "Embeddings"],
+    },
+    {
+      title: "Web Development",
+      icon: <Globe className="w-5 h-5" />,
+      accent: "sky",
+      skills: ["HTML", "CSS", "React", "Next.js", "Tailwind CSS"],
+    },
+    {
+      title: "Backend & Databases",
+      icon: <Database className="w-5 h-5" />,
+      accent: "violet",
+      skills: ["Flask", "REST APIs", "MongoDB", "MySQL", "Node.js"],
+    },
+    {
+      title: "Tools",
+      icon: <Wrench className="w-5 h-5" />,
+      accent: "zinc",
+      skills: ["Git", "GitHub", "VS Code", "Docker"],
     },
     {
       title: "Currently Learning",
       icon: <Sparkles className="w-5 h-5" />,
       accent: "emerald",
-      skills: [
-        { name: "Rust", level: 25 },
-        { name: "LLM Fine-Tuning", level: 35 },
-        { name: "GraphQL", level: 42 },
-        { name: "Kubernetes", level: 30 },
-        { name: "PyTorch", level: 38 },
-        { name: "WebAssembly", level: 20 },
-      ],
+      skills: ["PyTorch", "GraphQL", "Data Structures & Algorithms", "Cloud Basics"],
     },
   ];
 
-  const accentMap: Record<string, { pill: string; bar: string; icon: string }> = {
-    indigo:  { pill: "border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/15 hover:border-indigo-500/50 hover:shadow-[0_0_10px_rgba(99,102,241,0.3)]",  bar: "bg-indigo-500",  icon: "bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" },
-    violet:  { pill: "border-violet-500/30 text-violet-300 hover:bg-violet-500/15 hover:border-violet-500/50 hover:shadow-[0_0_10px_rgba(139,92,246,0.3)]",  bar: "bg-violet-500",  icon: "bg-violet-500/10 text-violet-400 group-hover:bg-violet-500 group-hover:text-white" },
-    sky:     { pill: "border-sky-500/30 text-sky-300 hover:bg-sky-500/15 hover:border-sky-500/50 hover:shadow-[0_0_10px_rgba(14,165,233,0.3)]",             bar: "bg-sky-500",     icon: "bg-sky-500/10 text-sky-400 group-hover:bg-sky-500 group-hover:text-white" },
-    purple:  { pill: "border-purple-500/30 text-purple-300 hover:bg-purple-500/15 hover:border-purple-500/50 hover:shadow-[0_0_10px_rgba(168,85,247,0.3)]", bar: "bg-purple-500",  icon: "bg-purple-500/10 text-purple-400 group-hover:bg-purple-500 group-hover:text-white" },
-    emerald: { pill: "border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/15 hover:border-emerald-500/50 hover:shadow-[0_0_10px_rgba(16,185,129,0.3)]", bar: "bg-emerald-500", icon: "bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white" },
+  const accentMap: Record<string, { pill: string; icon: string }> = {
+    indigo:  { pill: "border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/15 hover:border-indigo-500/50 hover:shadow-[0_0_10px_rgba(99,102,241,0.3)]",    icon: "bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" },
+    purple:  { pill: "border-purple-500/30 text-purple-300 hover:bg-purple-500/15 hover:border-purple-500/50 hover:shadow-[0_0_10px_rgba(168,85,247,0.3)]",   icon: "bg-purple-500/10 text-purple-400 group-hover:bg-purple-500 group-hover:text-white" },
+    sky:     { pill: "border-sky-500/30 text-sky-300 hover:bg-sky-500/15 hover:border-sky-500/50 hover:shadow-[0_0_10px_rgba(14,165,233,0.3)]",              icon: "bg-sky-500/10 text-sky-400 group-hover:bg-sky-500 group-hover:text-white" },
+    violet:  { pill: "border-violet-500/30 text-violet-300 hover:bg-violet-500/15 hover:border-violet-500/50 hover:shadow-[0_0_10px_rgba(139,92,246,0.3)]",  icon: "bg-violet-500/10 text-violet-400 group-hover:bg-violet-500 group-hover:text-white" },
+    zinc:    { pill: "border-zinc-500/30 text-zinc-300 hover:bg-zinc-500/15 hover:border-zinc-500/50 hover:shadow-[0_0_10px_rgba(113,113,122,0.2)]",         icon: "bg-zinc-500/10 text-zinc-400 group-hover:bg-zinc-500 group-hover:text-white" },
+    emerald: { pill: "border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/15 hover:border-emerald-500/50 hover:shadow-[0_0_10px_rgba(16,185,129,0.3)]", icon: "bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white" },
   };
 
   const containerVariants = {
@@ -123,7 +90,7 @@ export default function Skills() {
           </h2>
         </div>
 
-        {/* Skills Cards Grid — 3 cols on large, 2 on md, 1 on sm */}
+        {/* Skills Cards Grid */}
         <motion.div
           variants={containerVariants}
           initial="initial"
@@ -154,32 +121,16 @@ export default function Skills() {
                   </div>
                 </div>
 
-                {/* Skill Pills + Progress */}
-                <div className="flex flex-col gap-3">
+                {/* Skill Pills */}
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <div key={skill.name} className="flex flex-col gap-1.5">
-                      <div className="flex items-center justify-between">
-                        <motion.span
-                          whileHover={{ scale: 1.03 }}
-                          className={`inline-flex px-3 py-1 text-[11px] font-mono rounded-full bg-white/4 border transition-all duration-300 cursor-default ${accent.pill}`}
-                        >
-                          {skill.name}
-                        </motion.span>
-                        <span className="text-[10px] font-mono text-zinc-600">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      {/* Progress Bar */}
-                      <div className="h-0.5 w-full bg-white/5 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                          className={`h-full rounded-full ${accent.bar} opacity-60`}
-                        />
-                      </div>
-                    </div>
+                    <motion.span
+                      key={skill}
+                      whileHover={{ scale: 1.05 }}
+                      className={`inline-flex px-3 py-1.5 text-[11px] font-mono rounded-full bg-white/4 border transition-all duration-300 cursor-default ${accent.pill}`}
+                    >
+                      {skill}
+                    </motion.span>
                   ))}
                 </div>
               </motion.div>

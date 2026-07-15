@@ -59,18 +59,17 @@ export default function About() {
             className="col-span-1 lg:col-span-7 flex flex-col gap-8 text-zinc-300"
           >
             <h3 className="text-2xl md:text-3xl font-heading uppercase text-white leading-tight">
-              Merging Software Craftsmanship with Machine Intelligence
+              Passionate about AI and Software Development
             </h3>
             <p className="font-sans text-lg text-zinc-400 leading-relaxed">
-              I am an Information Science Engineering Student who is deeply passionate
-              about modern web architectures and computational intelligence. I specialize in
-              building React/Next.js interfaces that deliver fluid user experiences, and
-              backend pipelines driven by Python and Machine Learning.
+              I&apos;m an Information Science Engineering student with a strong interest in
+              Artificial Intelligence and software development. I enjoy building practical
+              projects that combine AI, backend development, and modern web technologies.
             </p>
             <p className="font-sans text-lg text-zinc-400 leading-relaxed">
-              I believe in clean structure, performant codebases, and rich aesthetics.
-              Whether implementing a neural net pipeline or crafting complex responsive
-              user journeys, I build products that are professional, luxury-standard, and intuitive.
+              My current focus is Python, Machine Learning, Generative AI, Data Structures
+              and Algorithms, and full-stack development. I believe the best way to learn
+              technology is by building real applications and solving practical problems.
             </p>
 
             {/* View Resume Button */}

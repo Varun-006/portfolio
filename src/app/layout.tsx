@@ -29,25 +29,26 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Varun D — AI & Full Stack Developer",
+  title: "Varun D | AI & Full Stack Developer",
   description:
-    "Portfolio of Varun D, an Information Science Engineering Student, Full Stack Developer, and Machine Learning enthusiast crafting premium web products and intelligent systems.",
+    "Portfolio of Varun D, an Information Science Engineering student building projects in Artificial Intelligence, Generative AI, Python, and full-stack development.",
   keywords: [
     "Varun D",
     "Full Stack Developer",
     "AI Developer",
     "Machine Learning",
+    "Generative AI",
+    "Python Developer",
     "React Developer",
     "Next.js Portfolio",
-    "Awwwards Portfolio",
     "Information Science Student",
   ],
   authors: [{ name: "Varun D" }],
   metadataBase: new URL("https://varun-d.dev"),
   openGraph: {
-    title: "Varun D — AI & Full Stack Developer",
+    title: "Varun D | AI & Full Stack Developer",
     description:
-      "Redesigned premium digital space showing selected works, technical capabilities, and intelligent projects.",
+      "Portfolio of Varun D — ISE student building practical projects in AI, Generative AI, and full-stack development.",
     type: "website",
     locale: "en_US",
     images: [
@@ -55,14 +56,14 @@ export const metadata: Metadata = {
         url: "/profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Varun D — AI & Full Stack Developer",
+        alt: "Varun D | AI & Full Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Varun D — AI & Full Stack Developer",
-    description: "Premium portfolio of Varun D — Full Stack & AI Engineer.",
+    title: "Varun D | AI & Full Stack Developer",
+    description: "ISE student building projects in AI, Generative AI, and full-stack development.",
     images: ["/profile.jpg"],
   },
 };

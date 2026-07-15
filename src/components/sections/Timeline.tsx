@@ -14,24 +14,24 @@ interface TimelineItem {
 export default function Timeline() {
   const items: TimelineItem[] = [
     {
-      year: "2024 - PRESENT",
-      title: "AI & Full Stack Developer",
-      organization: "Freelance & Open Source Projects",
-      description: "Developing intelligent web applications, setting up micro-services, and fine-tuning pipelines using Node, Python, and modern React environments.",
-      type: "experience",
-    },
-    {
       year: "2023 - PRESENT",
       title: "Information Science Engineering Student",
-      organization: "Engineering Academy / University",
-      description: "Acquiring strong academic foundations in algorithms, data structures, cloud architectures, database design, and machine learning structures.",
+      organization: "Engineering College",
+      description: "Pursuing B.E. in Information Science Engineering, building strong foundations in algorithms, data structures, software engineering, and machine learning concepts.",
       type: "education",
     },
     {
-      year: "2023",
-      title: "Core Web Developer",
-      organization: "Hobbyist & Student Tech Labs",
-      description: "Engineered responsive HTML, CSS, JavaScript layouts and set up custom server nodes to process RESTful data protocols.",
+      year: "2024 - PRESENT",
+      title: "AI & Full Stack Project Development",
+      organization: "Personal Projects",
+      description: "Building practical projects including an AI-powered video processing platform, a semantic resume search engine using FAISS, and a grocery price comparison web app.",
+      type: "experience",
+    },
+    {
+      year: "2025",
+      title: "Generative AI & NLP Learning",
+      organization: "Self-directed Learning",
+      description: "Exploring Generative AI, large language models, vector embeddings, FAISS semantic search, and NLP — applying concepts through hands-on project work.",
       type: "experience",
     },
   ];

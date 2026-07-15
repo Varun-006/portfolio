@@ -8,8 +8,8 @@ import { GithubIcon, LinkedinIcon } from "../icons/BrandIcons";
 import { useState, useEffect } from "react";
 
 const roles = [
-  "Full Stack Engineer",
   "AI Developer",
+  "Full Stack Dev",
   "ML Enthusiast",
   "Problem Solver",
 ];
@@ -138,7 +138,7 @@ export default function Hero() {
               className="flex items-center gap-2 px-4 py-1.5 glass-panel rounded-full text-xs font-mono tracking-widest text-indigo-300 uppercase border border-indigo-500/20"
             >
               <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-              AI & Full Stack Engineer Student
+              ISE Student · AI &amp; Full Stack Developer
             </motion.div>
           </div>
 
@@ -184,9 +184,9 @@ export default function Hero() {
             variants={fadeUpVariants}
             className="text-zinc-400 font-sans text-lg md:text-xl max-w-xl text-left leading-relaxed"
           >
-            I am Varun D, an Information Science Engineering student pushing the
-            boundaries of modern web development and Artificial Intelligence. Creating
-            cinematic products with flawless user interaction.
+            I build practical AI and full-stack applications, exploring machine
+            learning, Generative AI, and modern web technologies to solve
+            real-world problems.
           </motion.p>
 
           {/* CTA Buttons + Social Links */}
@@ -196,14 +196,14 @@ export default function Hero() {
           >
             <MagneticLink href="#projects">
               <span className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-sm uppercase tracking-wider rounded-full font-bold flex items-center gap-2 group transition-all duration-300 border border-indigo-500/20 shadow-[0_0_30px_rgba(99,102,241,0.2)] cursor-none interactive">
-                Selected Works
+                View My Work
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </span>
             </MagneticLink>
 
             <MagneticLink href="#contact">
               <span className="px-8 py-4 bg-transparent hover:bg-white/5 text-white font-mono text-sm uppercase tracking-wider rounded-full font-bold flex items-center gap-2 transition-all duration-300 border border-white/10 cursor-none interactive">
-                Let&apos;s Talk
+                Contact Me
               </span>
             </MagneticLink>
 

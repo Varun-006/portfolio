@@ -59,11 +59,12 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col justify-between gap-12">
             <div className="flex flex-col gap-6">
               <h3 className="text-2xl font-bold font-heading uppercase text-white tracking-tight">
-                Let's Build Something Exceptional
+                Let&apos;s Build Something Meaningful
               </h3>
               <p className="text-zinc-400 text-base leading-relaxed font-sans">
-                I am actively seeking internships, research collaborations, and open-source contributions. 
-                Whether you have a technical project to launch, a recruiting inquiry, or just want to chat about AI/ML or web standards, feel free to drop a message.
+                I&apos;m open to internships, collaborative projects, and opportunities to work
+                on AI and full-stack applications. Feel free to reach out if you want to
+                connect, collaborate, or just talk tech.
               </p>
             </div>
 
@@ -113,7 +114,7 @@ export default function Contact() {
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/varun-d-470411378/"
+                href="https://www.linkedin.com/in/varun-d-14b3a2344/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-white/5 border border-white/5 rounded-2xl text-zinc-400 hover:text-white hover:bg-white/10 hover:border-white/10 transition-colors cursor-none interactive"
