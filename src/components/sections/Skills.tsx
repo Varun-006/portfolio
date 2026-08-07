@@ -13,40 +13,40 @@ interface SkillCategory {
 export default function Skills() {
   const categories: SkillCategory[] = [
     {
-      title: "Programming",
+      title: "Programming Languages",
       icon: <Terminal className="w-5 h-5" />,
       accent: "indigo",
-      skills: ["Python", "Java", "JavaScript", "TypeScript"],
+      skills: ["Python", "Java", "C", "JavaScript", "HTML"],
     },
     {
-      title: "AI & Machine Learning",
-      icon: <Cpu className="w-5 h-5" />,
-      accent: "purple",
-      skills: ["Machine Learning", "Generative AI", "NLP", "FAISS", "Embeddings"],
-    },
-    {
-      title: "Web Development",
+      title: "Frameworks & Libraries",
       icon: <Globe className="w-5 h-5" />,
       accent: "sky",
-      skills: ["HTML", "CSS", "React", "Next.js", "Tailwind CSS"],
+      skills: ["React.js", "Node.js", "Express", "Tailwind CSS"],
     },
     {
-      title: "Backend & Databases",
+      title: "Databases",
       icon: <Database className="w-5 h-5" />,
       accent: "violet",
-      skills: ["Flask", "REST APIs", "MongoDB", "MySQL", "Node.js"],
+      skills: ["MongoDB", "MySQL"],
     },
     {
-      title: "Tools",
+      title: "Tools & Platforms",
       icon: <Wrench className="w-5 h-5" />,
       accent: "zinc",
-      skills: ["Git", "GitHub", "VS Code", "Docker"],
+      skills: ["Git", "GitHub", "CI/CD", "Docker", "Socket.io", "Cloudinary", "ChromaDB", "Google OAuth"],
     },
     {
-      title: "Currently Learning",
+      title: "Soft Skills",
+      icon: <Cpu className="w-5 h-5" />,
+      accent: "purple",
+      skills: ["Time Management", "Decision Making", "Agile / Scrum Teamwork"],
+    },
+    {
+      title: "Languages",
       icon: <Sparkles className="w-5 h-5" />,
       accent: "emerald",
-      skills: ["PyTorch", "GraphQL", "Data Structures & Algorithms", "Cloud Basics"],
+      skills: ["English", "Kannada", "Hindi"],
     },
   ];
 

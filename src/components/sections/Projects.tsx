@@ -34,74 +34,41 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
-      title: "Varun Portfolio V2",
+      title: "SKILLBRIDGE",
       number: "01",
-      category: "Full Stack / Frontend",
+      category: "Full Stack Developer",
       filterTag: "Full Stack",
       description:
-        "This portfolio — built with Next.js 16, React 19, Framer Motion, and GSAP. Features smooth scroll, custom cursor, glassmorphism UI, and animated sections.",
-      image: "/projects/portfolio-v1.png",
-      tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Framer Motion", "GSAP"],
-      github: "https://github.com/Varun-006/portfolio",
-      live: "#",
-      isWip: true,
-    },
-    {
-      title: "Video Forge",
-      number: "02",
-      category: "AI / Generative AI / Full Stack",
-      filterTag: "AI",
-      description:
-        "An AI-powered video processing platform designed to analyze video content and assist with intelligent clip selection and media workflows.",
-      image: "",
-      tech: ["Python", "Flask", "MongoDB", "Cloudinary", "Generative AI", "REST APIs"],
-      github: "",
-      live: "",
-      customVisual: (
-        <div className="w-full h-full relative bg-gradient-to-br from-[#0f0f1a] to-[#0A0A0A] flex flex-col justify-center items-center p-6 border-b border-white/5 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.07),transparent_60%)]" />
-          <div className="relative flex flex-col gap-3 max-w-xs w-full glass-panel p-5 rounded-2xl border border-indigo-500/20 shadow-xl">
-            <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-500 border-b border-white/5 pb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-              <span>VIDEO FORGE</span>
-              <span className="ml-auto text-indigo-400">PROCESSING</span>
-            </div>
-            <div className="flex flex-col gap-2">
-              {["Analyzing frames...", "Detecting scenes...", "AI clip selection..."].map((step) => (
-                <div key={step} className="flex items-center gap-2 text-[10px] font-mono text-zinc-400">
-                  <span className="text-emerald-400">✓</span>
-                  {step}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ),
+        "Developed a full-stack peer-to-peer skill exchange platform using React, Node.js, Express, and MongoDB. Integrated JWT authentication, real-time chat via Socket.io, skill-matching, ratings/reviews, video calls, AI assistant, and Cloudinary media uploads.",
+      image: "/projects/skillbridge.png",
+      tech: ["React.js", "Node.js", "Express", "MongoDB", "Socket.io", "Docker", "Google OAuth", "Cloudinary"],
+      github: "https://github.com/Varun-006",
+      live: "https://skillbridge-peach.vercel.app/",
     },
     {
       title: "Resume Search Engine",
-      number: "03",
-      category: "Generative AI / NLP",
+      number: "02",
+      category: "AI / Semantic Search",
       filterTag: "AI",
       description:
-        "An intelligent resume search system that uses semantic search to find relevant candidates based on skills, experience, and job requirements.",
+        "Developed an AI-powered resume search engine that parses PDF, DOCX, and TXT resumes. Chunked and embedded content into 384-dimensional vectors using all-MiniLM-L6-v2, storing them in ChromaDB for semantic retrieval via CLI and Streamlit.",
       image: "",
-      tech: ["Python", "FAISS", "Embeddings", "NLP", "Generative AI"],
-      github: "",
-      live: "",
+      tech: ["Python", "ChromaDB", "all-MiniLM-L6-v2", "PyTorch", "pypdf", "Streamlit"],
+      github: "https://github.com/Varun-006",
+      live: "#",
       customVisual: (
         <div className="w-full h-full relative bg-gradient-to-br from-[#0f0f1a] to-[#0A0A0A] flex flex-col justify-center items-center p-6 border-b border-white/5 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.07),transparent_60%)]" />
           <div className="relative flex flex-col gap-3 max-w-xs w-full glass-panel p-5 rounded-2xl border border-violet-500/20 shadow-xl">
             <div className="flex items-center gap-2 bg-white/3 rounded-xl px-3 py-2 border border-white/5 text-[10px] font-mono text-zinc-400">
               <span className="text-violet-400">›</span>
-              <span>&ldquo;Python Developer, 3yr exp&rdquo;</span>
+              <span>&ldquo;MERN & RN Developer, 384-dim vector&rdquo;</span>
             </div>
             <div className="flex flex-col gap-1.5 text-[10px] font-mono">
               {[
-                { label: "Resume_01", score: "94% match", highlight: true },
-                { label: "Resume_07", score: "88% match", highlight: false },
-                { label: "Resume_12", score: "81% match", highlight: false },
+                { label: "Varuna_D_Resume.pdf", score: "98% match", highlight: true },
+                { label: "Candidate_Backend.pdf", score: "89% match", highlight: false },
+                { label: "Candidate_ML.pdf", score: "82% match", highlight: false },
               ].map((r) => (
                 <div
                   key={r.label}
@@ -113,47 +80,6 @@ export default function Projects() {
                 >
                   <span>{r.label}</span>
                   <span className={r.highlight ? "text-violet-400" : ""}>{r.score}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Grocery Price Comparator",
-      number: "04",
-      category: "Full Stack / Web Scraping",
-      filterTag: "Full Stack",
-      description:
-        "A web application that compares grocery product prices across multiple online platforms to help users find better price options.",
-      image: "",
-      tech: ["Python", "Flask", "Selenium", "BeautifulSoup", "HTML", "CSS", "JavaScript"],
-      github: "",
-      live: "",
-      customVisual: (
-        <div className="w-full h-full relative bg-gradient-to-br from-[#0a100f] to-[#0A0A0A] flex flex-col justify-center items-center p-6 border-b border-white/5 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.05),transparent_60%)]" />
-          <div className="relative flex flex-col gap-3 max-w-xs w-full glass-panel p-5 rounded-2xl border border-emerald-500/20 shadow-xl">
-            <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border-b border-white/5 pb-2">
-              Price Comparison
-            </div>
-            <div className="flex flex-col gap-2 text-[10px] font-mono">
-              {[
-                { store: "Amazon", price: "₹249", best: false },
-                { store: "Flipkart", price: "₹219", best: false },
-                { store: "BigBasket", price: "₹199", best: true },
-              ].map((r) => (
-                <div
-                  key={r.store}
-                  className={`flex items-center justify-between px-2 py-1.5 rounded-lg ${
-                    r.best ? "bg-emerald-500/10 border border-emerald-500/20" : "bg-white/3"
-                  }`}
-                >
-                  <span className="text-zinc-400">{r.store}</span>
-                  <span className={r.best ? "text-emerald-400 font-bold" : "text-zinc-500"}>
-                    {r.price} {r.best && "✓"}
-                  </span>
                 </div>
               ))}
             </div>
@@ -206,7 +132,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, i) => (
               <motion.div

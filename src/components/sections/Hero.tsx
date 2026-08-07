@@ -8,10 +8,10 @@ import { GithubIcon, LinkedinIcon } from "../icons/BrandIcons";
 import { useState, useEffect } from "react";
 
 const roles = [
+  "MERN & RN Developer",
+  "Full Stack Developer",
   "AI Developer",
-  "Full Stack Dev",
-  "ML Enthusiast",
-  "Problem Solver",
+  "ISE Student",
 ];
 
 // Fixed particle positions to avoid hydration mismatch

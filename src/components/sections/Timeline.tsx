@@ -14,24 +14,24 @@ interface TimelineItem {
 export default function Timeline() {
   const items: TimelineItem[] = [
     {
-      year: "2023 - PRESENT",
-      title: "Information Science Engineering Student",
-      organization: "Engineering College",
-      description: "Pursuing B.E. in Information Science Engineering, building strong foundations in algorithms, data structures, software engineering, and machine learning concepts.",
-      type: "education",
-    },
-    {
-      year: "2024 - PRESENT",
-      title: "AI & Full Stack Project Development",
-      organization: "Personal Projects",
-      description: "Building practical projects including an AI-powered video processing platform, a semantic resume search engine using FAISS, and a grocery price comparison web app.",
+      year: "2025 - PRESENT",
+      title: "MERN + RN Developer Intern",
+      organization: "Automatech (Remote)",
+      description: "Selected via Aignite 2.0 – TECHXHIBIT. Collaborating on real-world projects in an Agile/Scrum team (bi-weekly stand-ups, sprint tracking). Recognized as a top performer (among 3 of 12 interns eligible for outstanding contribution stipend).",
       type: "experience",
     },
     {
+      year: "2023 - 2027",
+      title: "B.E. — Information Science & Engineering",
+      organization: "Rajeev Institute of Technology, Hassan (VTU)",
+      description: "Pursuing B.E. in ISE with a CGPA of 8.36. Relevant Coursework: Data Structures & Algorithms, DBMS, OS, Computer Networks, OOP, Software Engineering, Machine Learning.",
+      type: "education",
+    },
+    {
       year: "2025",
-      title: "Generative AI & NLP Learning",
-      organization: "Self-directed Learning",
-      description: "Exploring Generative AI, large language models, vector embeddings, FAISS semantic search, and NLP — applying concepts through hands-on project work.",
+      title: "Full-Stack & AI Systems Builder",
+      organization: "Projects & Hackathons",
+      description: "Developed SkillBridge (peer-to-peer exchange platform) and an AI Resume Search Engine with ChromaDB vector embeddings. Runner-Up at GameForge competition and participated in HACKABHiGNA 2025.",
       type: "experience",
     },
   ];
