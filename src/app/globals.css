@@ -214,3 +214,52 @@ html.lenis, html.lenis body {
   pointer-events: none;
   z-index: 0;
 }
+
+/* Conic Glowing Border Effect */
+@keyframes spinGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.conic-glow-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.conic-glow-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(99, 102, 241, 0.4),
+    rgba(168, 85, 247, 0.5),
+    rgba(56, 189, 248, 0.4),
+    transparent 60%
+  );
+  animation: spinGlow 8s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.conic-glow-card:hover::before {
+  opacity: 1;
+}
+
+.conic-glow-card-inner {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 10, 10, 0.95);
+  border-radius: calc(1.5rem - 1px);
+  height: 100%;
+}

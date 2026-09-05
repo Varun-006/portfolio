@@ -39,9 +39,9 @@ export default function Timeline() {
   return (
     <section
       id="timeline"
-      className="py-24 lg:py-36 px-6 lg:px-12 relative overflow-hidden select-none border-t border-white/5"
+      className="py-16 lg:py-24 px-6 lg:px-12 relative overflow-hidden select-none border-t border-white/5"
     >
-      <div className="max-w-4xl mx-auto flex flex-col gap-16 relative z-10">
+      <div className="max-w-4xl mx-auto flex flex-col gap-10 relative z-10">
         
         {/* Section Heading */}
         <div className="flex flex-col gap-4 text-center">

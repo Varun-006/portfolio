@@ -26,6 +26,16 @@ interface Achievement {
 export default function Achievements() {
   const achievements: Achievement[] = [
     {
+      title: "Software Development Internship & Contributor",
+      org: "AutomatecH (MSME Govt. of India)",
+      year: "Aug 2026",
+      description: "Successfully completed a 3-month Software Development Internship at AutomatecH (Nov 2025 – Feb 2026), building with Next.js, MERN stack, and Python. Association extended as an Official Contributor.",
+      category: "Certification",
+      image: "/certificates/automatech.jpg",
+      badgeUrl: "https://automatech.live/verify-certificate",
+      icon: "💼",
+    },
+    {
       title: "HACKABHiGNA 2025",
       org: "AIT Chikkamagaluru & Google Student Ambassador Program",
       year: "Oct 2025",
@@ -68,9 +78,9 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="py-24 lg:py-36 px-6 lg:px-12 relative overflow-hidden select-none border-t border-white/5 bg-zinc-950/10"
+      className="py-16 lg:py-24 px-6 lg:px-12 relative overflow-hidden select-none border-t border-white/5 bg-zinc-950/10"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 relative z-10">
         
         {/* Section Heading */}
         <div className="flex flex-col gap-4">
@@ -105,12 +115,13 @@ export default function Achievements() {
                 {/* Optional Image or Icon Graphic */}
                 {item.image ? (
                   <Dialog>
-                    <DialogTrigger className="w-full text-left bg-transparent p-0 m-0 border-0 outline-none block cursor-none interactive">
+                    <DialogTrigger className="w-full text-left bg-transparent p-0 m-0 border-0 outline-none block cursor-pointer interactive">
                       <div className="relative h-52 w-full rounded-2xl overflow-hidden border border-white/5 group/img">
                         <Image
                           src={item.image}
                           alt={item.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/45 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
@@ -135,6 +146,7 @@ export default function Achievements() {
                           src={item.image}
                           alt={item.title}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 80vw"
                           className="object-contain"
                         />
                       </div>
@@ -165,7 +177,7 @@ export default function Achievements() {
                     href={item.badgeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono text-zinc-400 hover:text-white transition-colors cursor-none interactive"
+                    className="flex items-center gap-1.5 text-xs font-mono text-zinc-400 hover:text-white transition-colors cursor-pointer interactive"
                   >
                     Verify Credential <ExternalLink className="w-3.5 h-3.5" />
                   </a>

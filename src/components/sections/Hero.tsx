@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Terminal as TerminalIcon } from "lucide-react";
 import { MagneticLink } from "../Navbar";
 import Image from "next/image";
 import { GithubIcon, LinkedinIcon } from "../icons/BrandIcons";
 import { useState, useEffect } from "react";
+import TerminalWidget from "../TerminalWidget";
 
 const roles = [
   "MERN & RN Developer",
@@ -35,6 +36,7 @@ const particles = [
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
+  const [showTerminal, setShowTerminal] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -75,7 +77,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center px-6 lg:px-12 pt-24 overflow-hidden select-none">
+    <section className="relative min-h-screen flex flex-col justify-center items-center px-6 lg:px-12 pt-24 pb-10 overflow-hidden select-none">
       {/* Background Grid Pattern */}
       <div className="grid-lines absolute inset-0" />
 
@@ -105,7 +107,7 @@ export default function Hero() {
       {/* Background Profile Portrait */}
       <motion.div
         initial={{ opacity: 0, scale: 1.05 }}
-        animate={{ opacity: 0.40, scale: 1 }}
+        animate={{ opacity: 0.35, scale: 1 }}
         transition={{ duration: 1.8, delay: 0.6, ease: "easeOut" }}
         className="absolute right-0 bottom-0 top-0 w-full lg:w-[50%] h-full pointer-events-none select-none z-0 overflow-hidden"
         style={{
@@ -128,10 +130,10 @@ export default function Hero() {
         variants={containerVariants}
         initial="initial"
         animate="animate"
-        className="max-w-7xl w-full mx-auto flex flex-col gap-8 relative z-10 text-center lg:text-left mt-8 lg:mt-0"
+        className="max-w-7xl w-full mx-auto flex flex-col gap-6 relative z-10 text-center lg:text-left mt-2"
       >
         {/* Intro Tag + Rotating Role */}
-        <div className="flex flex-col gap-3 items-center lg:items-start">
+        <div className="flex flex-col gap-2 items-center lg:items-start">
           <div className="overflow-hidden h-fit flex justify-center lg:justify-start">
             <motion.div
               variants={textRevealVariants}
@@ -143,7 +145,7 @@ export default function Hero() {
           </div>
 
           {/* Rotating Role Subtitle */}
-          <div className="h-7 overflow-hidden flex justify-center lg:justify-start">
+          <div className="h-6 overflow-hidden flex justify-center lg:justify-start">
             <AnimatePresence mode="wait">
               <motion.span
                 key={roleIndex}
@@ -151,7 +153,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -28, opacity: 0 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="block text-zinc-500 font-mono text-sm tracking-widest uppercase"
+                className="block text-zinc-500 font-mono text-xs tracking-widest uppercase"
               >
                 // {roles[roleIndex]}
               </motion.span>
@@ -160,25 +162,25 @@ export default function Hero() {
         </div>
 
         {/* Huge Modern Typography */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] xl:text-[8rem] font-extrabold leading-[0.9] tracking-tighter text-white uppercase text-left flex flex-col gap-1 md:gap-3">
-          <span className="overflow-hidden block py-1.5">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.2rem] xl:text-[6rem] font-extrabold leading-[0.92] tracking-tighter text-white uppercase text-left flex flex-col gap-0.5">
+          <span className="overflow-hidden block py-1">
             <motion.span variants={textRevealVariants} className="block">
-              INTELLIGENT
+              LEARN. BUILD.
             </motion.span>
           </span>
-          <span className="overflow-hidden block py-1.5 text-indigo-400">
+          <span className="overflow-hidden block py-1 text-indigo-400">
             <motion.span variants={textRevealVariants} className="block">
-              SYSTEMS //
+              CREATE. //
             </motion.span>
           </span>
-          <span className="overflow-hidden block py-1.5">
+          <span className="overflow-hidden block py-1">
             <motion.span variants={textRevealVariants} className="block">
-              SEAMLESS WEB
+              REPEAT.
             </motion.span>
           </span>
         </h1>
 
-        {/* Short introduction + CTA buttons */}
+        {/* Short introduction + CTA buttons + Terminal Toggle */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mt-2">
           <motion.p
             variants={fadeUpVariants}
@@ -195,17 +197,23 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-4 justify-start"
           >
             <MagneticLink href="#projects">
-              <span className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-sm uppercase tracking-wider rounded-full font-bold flex items-center gap-2 group transition-all duration-300 border border-indigo-500/20 shadow-[0_0_30px_rgba(99,102,241,0.2)] cursor-none interactive">
+              <span className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-sm uppercase tracking-wider rounded-full font-bold flex items-center gap-2 group transition-all duration-300 border border-indigo-500/20 shadow-[0_0_30px_rgba(99,102,241,0.2)] cursor-pointer">
                 View My Work
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </span>
             </MagneticLink>
 
-            <MagneticLink href="#contact">
-              <span className="px-8 py-4 bg-transparent hover:bg-white/5 text-white font-mono text-sm uppercase tracking-wider rounded-full font-bold flex items-center gap-2 transition-all duration-300 border border-white/10 cursor-none interactive">
-                Contact Me
-              </span>
-            </MagneticLink>
+            <button
+              onClick={() => setShowTerminal((prev) => !prev)}
+              className={`px-6 py-4 rounded-full font-mono text-sm uppercase tracking-wider font-bold flex items-center gap-2 transition-all duration-300 border cursor-pointer ${
+                showTerminal
+                  ? "bg-indigo-500/20 border-indigo-500/50 text-indigo-300"
+                  : "bg-white/5 border-white/10 hover:border-indigo-500/30 text-white"
+              }`}
+            >
+              <TerminalIcon className="w-4 h-4 text-indigo-400" />
+              {showTerminal ? "Hide CLI" : "Launch Terminal"}
+            </button>
 
             {/* Social Icon Links */}
             <div className="flex items-center gap-3 pl-2 border-l border-white/10">
@@ -213,7 +221,7 @@ export default function Hero() {
                 href="https://github.com/Varun-006"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-white/10 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:shadow-[0_0_16px_rgba(99,102,241,0.25)] text-zinc-400 hover:text-white transition-all duration-300 cursor-none interactive"
+                className="p-2.5 rounded-full border border-white/10 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:shadow-[0_0_16px_rgba(99,102,241,0.25)] text-zinc-400 hover:text-white transition-all duration-300 cursor-pointer"
                 aria-label="GitHub Profile"
               >
                 <GithubIcon className="w-4 h-4" />
@@ -222,7 +230,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/varun-d-14b3a2344/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-white/10 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:shadow-[0_0_16px_rgba(99,102,241,0.25)] text-zinc-400 hover:text-white transition-all duration-300 cursor-none interactive"
+                className="p-2.5 rounded-full border border-white/10 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:shadow-[0_0_16px_rgba(99,102,241,0.25)] text-zinc-400 hover:text-white transition-all duration-300 cursor-pointer"
                 aria-label="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-4 h-4" />
@@ -230,6 +238,21 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
+
+        {/* Embedded Interactive Terminal Widget */}
+        <AnimatePresence>
+          {showTerminal && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="w-full max-w-3xl mt-4"
+            >
+              <TerminalWidget />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       {/* Scroll Down Indicator */}
@@ -237,7 +260,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500 font-mono text-[10px] tracking-widest uppercase z-10 interactive"
+        className="mt-12 flex flex-col items-center gap-2 text-zinc-500 font-mono text-[10px] tracking-widest uppercase z-10 cursor-pointer"
       >
         <span>Scroll Down</span>
         <motion.div

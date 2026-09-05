@@ -35,12 +35,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 lg:py-36 px-6 lg:px-12 relative overflow-hidden select-none border-t border-white/5 bg-[#080808]"
+      className="py-16 lg:py-24 px-6 lg:px-12 relative overflow-hidden select-none border-t border-white/5 bg-[#080808]"
     >
       {/* Background radial soft light */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(99,102,241,0.05),transparent_60%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 relative z-10">
         
         {/* Section Heading */}
         <div className="flex flex-col gap-4">
@@ -108,7 +108,7 @@ export default function Contact() {
                 href="https://github.com/Varun-006"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-white/5 border border-white/5 rounded-2xl text-zinc-400 hover:text-white hover:bg-white/10 hover:border-white/10 transition-colors cursor-none interactive"
+                className="p-4 bg-white/5 border border-white/5 rounded-2xl text-zinc-400 hover:text-white hover:bg-white/10 hover:border-white/10 transition-colors cursor-pointer interactive"
                 aria-label="GitHub Profile"
               >
                 <GithubIcon className="w-5 h-5" />
@@ -117,7 +117,7 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/varun-d-14b3a2344/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-white/5 border border-white/5 rounded-2xl text-zinc-400 hover:text-white hover:bg-white/10 hover:border-white/10 transition-colors cursor-none interactive"
+                className="p-4 bg-white/5 border border-white/5 rounded-2xl text-zinc-400 hover:text-white hover:bg-white/10 hover:border-white/10 transition-colors cursor-pointer interactive"
                 aria-label="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-5 h-5" />
@@ -157,7 +157,7 @@ export default function Contact() {
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       placeholder="e.g. John Doe"
-                      className="w-full bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/[0.04] transition-all cursor-none interactive"
+                      className="w-full bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/[0.04] transition-all cursor-pointer interactive"
                     />
                   </div>
 
@@ -173,7 +173,7 @@ export default function Contact() {
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       placeholder="e.g. john@example.com"
-                      className="w-full bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/[0.04] transition-all cursor-none interactive"
+                      className="w-full bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/[0.04] transition-all cursor-pointer interactive"
                     />
                   </div>
 
@@ -189,7 +189,7 @@ export default function Contact() {
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       placeholder="What would you like to build?"
-                      className="w-full bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/[0.04] transition-all resize-none cursor-none interactive"
+                      className="w-full bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/[0.04] transition-all resize-none cursor-pointer interactive"
                     />
                   </div>
 
@@ -197,7 +197,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-sm uppercase tracking-wider rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 disabled:opacity-50 border border-indigo-500/20 cursor-none interactive shadow-[0_0_30px_rgba(99,102,241,0.15)] mt-4"
+                    className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-sm uppercase tracking-wider rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 disabled:opacity-50 border border-indigo-500/20 cursor-pointer interactive shadow-[0_0_30px_rgba(99,102,241,0.15)] mt-4"
                   >
                     {status === "submitting" ? (
                       "Transmitting..."

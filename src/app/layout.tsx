@@ -5,6 +5,8 @@ import LenisProvider from "@/components/LenisProvider";
 import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
+import CommandPalette from "@/components/CommandPalette";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,24 +85,29 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#0A0A0A] text-white overflow-x-hidden relative selection:bg-indigo-500/20 selection:text-white">
-        {/* Preloader counter */}
-        <Preloader />
+        <ThemeProvider>
+          {/* Preloader counter */}
+          <Preloader />
 
-        {/* Global FX Overlay */}
-        <div className="grain-overlay" />
-        <div className="glow-bg glow-bg-1" />
-        <div className="glow-bg glow-bg-2" />
+          {/* Global FX Overlay */}
+          <div className="grain-overlay" />
+          <div className="glow-bg glow-bg-1" />
+          <div className="glow-bg glow-bg-2" />
 
-        {/* Custom interactive mouse cursor */}
-        <CustomCursor />
+          {/* Custom interactive mouse cursor */}
+          <CustomCursor />
 
-        {/* Smooth Scrolling Wrapper */}
-        <LenisProvider>
-          <Navbar />
-          <main className="flex-grow flex flex-col relative z-10">
-            {children}
-          </main>
-        </LenisProvider>
+          {/* Command Palette Trigger & Modal */}
+          <CommandPalette />
+
+          {/* Smooth Scrolling Wrapper */}
+          <LenisProvider>
+            <Navbar />
+            <main className="flex-grow flex flex-col relative z-10">
+              {children}
+            </main>
+          </LenisProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
